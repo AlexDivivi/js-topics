@@ -1,0 +1,13 @@
+@import "header";
+
+body {
+  display: grid;
+  grid-template-rows: 80px, auto, 80px;
+  height: 80vh;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@import "footer";
