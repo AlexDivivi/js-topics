@@ -30,6 +30,7 @@ body {
   grid-gap: 20px;
   overflow-y: scroll;
   justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 
@@ -43,11 +44,12 @@ body {
   flex-direction: column;
   width: 400px;
   height: 250px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .content-head {
   display: flex;
+  height: 25%;
   justify-content: space-between;
   align-items: center;
   box-shadow: 3px 0 20px grey;
@@ -55,7 +57,6 @@ body {
 
 .content-main {
   overflow-y: scroll;
-  display: flex;
 }
 
 .btn {

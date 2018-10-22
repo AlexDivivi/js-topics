@@ -1,52 +1,47 @@
 const listContainer = get('.list-container')
 const newTopic = get('.new-topic')
-let inphead = ''
-let inptext = ''
+
+class Topic {
+  constructor(head, text) {
+    this.head = head
+    this.text = text
+    this.button = false
+  }
+}
 
 let topicsArray = [
-  {
-    head: 'Topic 1',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: false
-  },
-  {
-    head: 'Topic 2',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: true
-  },
-  {
-    head: 'Topic 3',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: false
-  },
-  {
-    head: 'Topic 4',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: false
-  },
-  {
-    head: 'Topic 5',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: true
-  },
-  {
-    head: 'Topic 6',
-    text:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, id nihil! Aut animi perferendis obcaecati expedita soluta quasi vel praesentium consequuntur minus libero ipsum incidunt voluptates inventore voluptatem sint ipsa explicabo cumque mollitia, quaerat asperiores, fugiat illum enim? Quo aliquam, odit blanditiis veritatis velit adipisci corrupti quod quis fugit nihil!',
-    button: false
-  }
+  new Topic(
+    'Topic 1',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi aut tenetur necessitatibus, odio porro dolores beatae reiciendis? Obcaecati reprehenderit at sit accusantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, repudiandae neque sint doloremque earum blanditiis ex illum ipsa ea aspernatur cupiditate eum harum, maiores quae! Dolorum illum iusto eveniet qui?'
+  ),
+  new Topic(
+    'Topic 2',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi aut tenetur necessitatibus, odio porro dolores beatae reiciendis? Obcaecati reprehenderit at sit accusantium?'
+  ),
+  new Topic(
+    'Topic 3',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi aut tenetur necessitatibus, odio porro dolores beatae reiciendis? Obcaecati reprehenderit at sit accusantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, repudiandae neque sint doloremque earum blanditiis ex illum ipsa ea aspernatur cupiditate eum harum, maiores quae! Dolorum illum iusto eveniet qui?'
+  ),
+  new Topic(
+    'Topic 4',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati.'
+  ),
+  new Topic(
+    'Topic 5',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi aut tenetur necessitatibus, odio porro dolores beatae reiciendis? Obcaecati reprehenderit at sit accusantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi aut tenetur necessitatibus, odio porro dolores beatae reiciendis? Obcaecati reprehenderit at sit accusantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, repudiandae neque sint doloremque earum blanditiis ex illum ipsa ea aspernatur cupiditate eum harum, maiores quae! Dolorum illum iusto eveniet qui?'
+  ),
+  new Topic(
+    'Topic 6',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati, rem, unde nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur corrupti quisquam similique repudiandae ad rerum, quas fugit ex, nobis blanditiis nesciunt illum quia, ipsam delectus eum provident quam laborum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aspernatur deleniti quod recusandae obcaecati. Lorem ipsum.'
+  )
 ]
 
 renderTopics()
 
 newTopic.addEventListener('click', event => {
-  inphead = prompt('Please enter Headline:', '')
-  inptext = prompt('Please enter Text', '')
+  const inphead = prompt('Please enter Headline:', '')
+  const inptext = prompt('Please enter Text', '')
+  topicsArray.push(new Topic(inphead, inptext))
   renderTopics()
 })
 
