@@ -63,6 +63,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 20px; }
+  @media screen and (max-width: 767px) {
+    .list-container {
+      grid-template-columns: repeat(auto-fill, 300px); } }
 
 .hide {
   height: 0;
@@ -74,13 +77,16 @@ body {
   width: 400px;
   height: 250px;
   overflow-y: scroll; }
+  @media screen and (max-width: 767px) {
+    .content-box {
+      width: 290px; } }
 
 .content-head {
   display: flex;
   height: 25%;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 3px 0 20px grey; }
+  box-shadow: 3px 1px 20px grey; }
 
 .content-main {
   overflow-y: scroll; }

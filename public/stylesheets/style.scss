@@ -25,6 +25,9 @@ body {
 
 .list-container {
   display: grid;
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
   grid-template-columns: repeat(auto-fill, 450px);
   grid-auto-rows: 250px;
   grid-gap: 20px;
@@ -42,6 +45,9 @@ body {
 .content-box {
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 767px) {
+    width: 290px;
+  }
   width: 400px;
   height: 250px;
   overflow-y: scroll;
@@ -52,7 +58,7 @@ body {
   height: 25%;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 3px 0 20px grey;
+  box-shadow: 3px 1px 20px grey;
 }
 
 .content-main {
